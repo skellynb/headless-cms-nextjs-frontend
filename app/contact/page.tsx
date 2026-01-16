@@ -1,7 +1,9 @@
 import Link from "next/link";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 async function getContact() {
-  const res = await fetch("http://localhost:1337/api/contact-page", {
+  const res = await fetch(`${API_URL}/api/contact-page`, {
     cache: "no-store",
   });
   return res.json();

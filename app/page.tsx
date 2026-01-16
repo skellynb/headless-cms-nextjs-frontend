@@ -1,7 +1,9 @@
 import Link from "next/link";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 async function getPosts() {
-  const res = await fetch("http://localhost:1337/api/posts", {
+  const res = await fetch(`${API_URL}/api/posts`, {
     cache: "no-store",
   });
 
@@ -12,7 +14,7 @@ export default async function Home() {
   const posts = await getPosts();
 
   return (
-    <main style={{ fontFamily: "Arial, sans-serif", color: "#0f172a" }}>
+    <main style={{ fontFamily: "Arial, sans-serif", color: "#5e6c8d" }}>
       {/* Navigation */}
       <nav
         style={{
